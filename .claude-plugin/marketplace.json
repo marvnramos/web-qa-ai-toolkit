@@ -1,0 +1,20 @@
+{
+  "name": "web-qa-ai-toolkit",
+  "metadata": {
+    "description": "Independent AI toolkit for web and API QA: golden-path, adversarial, and bug-fixer agents.",
+    "version": "0.1.0"
+  },
+  "owner": {
+    "name": "Marvin Ramos"
+  },
+  "plugins": [
+    {
+      "name": "web-qa",
+      "source": "./",
+      "version": "0.1.0",
+      "description": "The qa-happy-path, qa-chaos-monkey, and qa-bug-fixer agents, plus a project installer.",
+      "keywords": ["qa", "api", "graphql", "playwright", "e2e", "testing"],
+      "category": "testing"
+    }
+  ]
+}

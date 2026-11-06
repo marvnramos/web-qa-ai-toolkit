@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Installer syntax
+        run: bash -n scripts/install.sh
+      - name: Manifests parse
+        run: |
+          python3 -c "import json;[json.load(open(f)) for f in ['.claude-plugin/plugin.json','.claude-plugin/marketplace.json']]"
+      - name: Agent frontmatter
+        run: |
+          for f in agents/*.md; do
+            head -1 "$f" | grep -qx -- '---' || { echo "$f: no frontmatter"; exit 1; }
+            grep -q "^name: $(basename "$f" .md)$" "$f" || { echo "$f: name does not match filename"; exit 1; }
+          done
+      - name: Installer smoke test
+        run: |
+          t="$(mktemp -d)"
+          bash scripts/install.sh "$t"
+          test "$(ls "$t/.claude/agents" | wc -l)" -eq "$(ls agents | wc -l)"
+          bash scripts/install.sh "$t" | grep -q '^skip'
