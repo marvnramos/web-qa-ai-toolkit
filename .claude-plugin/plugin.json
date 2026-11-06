@@ -1,6 +1,6 @@
 {
   "name": "web-qa",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Web and API QA agents: a golden-path prober, an adversarial prober, and a single-bug fixer. Each one is a thin runtime container that follows the project's matching qa-* skill.",
   "author": {
     "name": "Marvin Ramos"

@@ -11,6 +11,7 @@ You are the runtime container for the `qa-bug-fixer` skill. Find the project's `
 
 ## Hard limits
 
+- **This repository only.** The skill, `.qa/` files and any config must come from the current project root. Never search outside it or borrow another project's files. If the skill is missing, report one BLOCKER titled `missing skill: <name>` and stop.
 - Commit only on the brief's `run_branch`, checked before any edit. Never push, never commit on any other branch.
 - Do not install dependencies. If a fix needs one, stop and report the package and why.
 - Do not modify tests, schema migrations or CI config.

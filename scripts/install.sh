@@ -24,6 +24,6 @@ done
 
 if [[ "${1:-}" != "--user" ]]; then
   root="$(dirname "$(dirname "$DEST")")"
-  [[ -f "$root/.qa/config.yml" ]] || echo "note   no .qa/config.yml in $root (agents read api.base_url from it)"
-  [[ -f "$root/.qa/test-plan.md" ]] || echo "note   no .qa/test-plan.md in $root (agents probe its sections)"
+  [[ -f "$root/.qa/config.yml" ]] || echo "note   no .qa/config.yml in $root (your qa-* skills may read it)"
+  [[ -f "$root/.qa/test-plan.md" ]] || echo "note   no .qa/test-plan.md in $root (briefs usually name its sections)"
 fi

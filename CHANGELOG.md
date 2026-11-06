@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.1
+
+- All agents: new "This repository only" hard limit. A missing skill now ends the run with a
+  `missing skill: <name>` BLOCKER instead of a filesystem-wide search that borrowed another
+  project's skill, test plan and env file
+- Installer notes no longer claim the agents read `.qa/config.yml` directly
+
 ## 0.2.0
 
 The agents are now thin runtime containers over their project skills.
