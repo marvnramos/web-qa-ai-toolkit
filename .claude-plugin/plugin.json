@@ -1,7 +1,7 @@
 {
   "name": "web-qa",
-  "version": "0.1.0",
-  "description": "Web and API QA agents: a golden-path prober, an adversarial prober, and a single-bug fixer. Each one reads its playbook from the project's skill and its targets from .qa/config.yml.",
+  "version": "0.2.0",
+  "description": "Web and API QA agents: a golden-path prober, an adversarial prober, and a single-bug fixer. Each one is a thin runtime container that follows the project's matching qa-* skill.",
   "author": {
     "name": "Marvin Ramos"
   },
